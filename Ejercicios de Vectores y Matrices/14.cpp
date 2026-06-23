@@ -1,17 +1,36 @@
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 int main() {
-    int m,n;
-    cin >> m >> n;
-    int A[m][n];
-    for(int i=0;i<m;i++) for(int j=0;j<n;j++) cin>>A[i][j];
-    int suma=0;
-    for(int i=0;i<m;i++){
-        suma+=A[i][0];          // primera columna
-        suma+=A[i][n-1];        // última columna
-        suma+=A[i][i];          // diagonal principal
+    int n;
+    cout << "Ingrese el tamaño de la matriz (n x n): ";
+    cin >> n;
+
+    int A[n][n];
+    cout << "Ingrese los elementos de la matriz:" << endl;
+    for(int i=0; i<n; i++){
+        for(int j=0; j<n; j++){
+            cin >> A[i][j];
+        }
     }
-    cout<<"Suma de elementos que forman N="<<suma<<endl;
+
+    int suma = 0;
+    cout << "\nMatriz con elementos de la 'N' resaltados:" << endl;
+    for(int i=0; i<n; i++){
+        for(int j=0; j<n; j++){
+            bool esN = (j==0) || (j==n-1) || (i==j); // primera col, última col, diagonal principal
+            if(esN){
+                cout << setw(4) << "[" << A[i][j] << "]";
+                suma += A[i][j];
+            } else {
+                cout << setw(4) << A[i][j];
+            }
+        }
+        cout << endl;
+    }
+
+    cout << "\nSuma de elementos que forman la letra N = " << suma << endl;
     return 0;
 }
+
