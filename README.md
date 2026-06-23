@@ -21,6 +21,7 @@ Cada ejercicio está acompañado de un código funcional y comentado, pensado pa
 11. Sumar los elementos de la diagonal principal (izquierda a derecha).  
 12. Sumar los elementos de la diagonal secundaria (derecha a izquierda).  
 13. Copiar los elementos de los bordes de una matriz en sentido horario a un vector.  
-14. Sumar los elementos que forman la letra **N** dentro de una matriz.  
+14. Sumar los elementos que forman la letra **N** dentro de una matriz.
+---
 g++ ejercicioX.cpp -o ejercicioX
 ./ejercicioX
